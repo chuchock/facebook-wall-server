@@ -1,4 +1,4 @@
-const userModel = require("../models/userModel");
+const User = require("../models/User");
 const bcryptjs = require("bcryptjs");
 const { validationResult } = require("express-validator");
 const jwt = require("jsonwebtoken");
@@ -15,7 +15,7 @@ exports.authenticateUser = async (req, res) => {
 
   try {
     // Check if user exists
-    let user = await userModel.findOne({ email });
+    let user = await User.findOne({ email });
     if (!user) {
       return res.status(400).json({ msg: "User does not exist" });
     }

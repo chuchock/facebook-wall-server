@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
 });
 
 // Import routes
-app.use("/api/user", require("./routes/user"));
+app.use("/api/users", require("./routes/users"));
 app.use("/api/auth", require("./routes/auth"));
 
 // Start App

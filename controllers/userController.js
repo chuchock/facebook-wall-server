@@ -1,4 +1,4 @@
-const userModel = require("../models/userModel");
+const User = require("../models/User");
 const bcryptjs = require("bcryptjs");
 const { validationResult } = require("express-validator");
 const jwt = require("jsonwebtoken");
@@ -17,14 +17,14 @@ exports.createUser = async (req, res) => {
 
   try {
     // Check for unique user
-    let user = await userModel.findOne({ email });
+    let user = await User.findOne({ email });
 
     if (user) {
       return res.status(400).json({ msg: "User already exists" });
     }
 
     // Create new user
-    user = new userModel(req.body);
+    user = new User(req.body);
 
     // hash password
     const salt = await bcryptjs.genSalt(10); //salt = unique hash if different users write same pass
