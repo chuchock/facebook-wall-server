@@ -10,7 +10,7 @@ const connectDB = async () => {
       useFindAndModify: false,
     });
 
-    console.log("DB conectada");
+    console.log("DB connected");
   } catch (error) {
     console.log(error);
     process.exit(1);
