@@ -1,19 +1,31 @@
 {
-  "name": "facebook-wall-server",
-  "version": "1.0.0",
-  "description": "Backend for facebook wall app",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/chuchock/facebook-wall-server.git"
-  },
-  "author": "Jesus Montero Cuevas",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/chuchock/facebook-wall-server/issues"
-  },
-  "homepage": "https://github.com/chuchock/facebook-wall-server#readme"
+    "name": "facebook-wall-server",
+    "version": "1.0.0",
+    "description": "Backend for facebook wall app",
+    "main": "index.js",
+    "scripts": {
+        "start": "node .",
+        "dev": "nodemon ."
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/chuchock/facebook-wall-server.git"
+    },
+    "author": "Jesus Montero Cuevas",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/chuchock/facebook-wall-server/issues"
+    },
+    "homepage": "https://github.com/chuchock/facebook-wall-server#readme",
+    "devDependencies": {
+        "nodemon": "^2.0.4"
+    },
+    "dependencies": {
+        "bcryptjs": "^2.4.3",
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1",
+        "express-validator": "^6.6.1",
+        "jsonwebtoken": "^8.5.1",
+        "mongoose": "^5.10.6"
+    }
 }
