@@ -15,7 +15,7 @@ router.post(
 
 // Get all posts
 // api/posts
-router.get("/", auth, postController.getPosts);
+router.get("/:filter", auth, postController.getPosts);
 
 // Update post
 // api/posts

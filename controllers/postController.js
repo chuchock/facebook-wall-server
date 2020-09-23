@@ -28,10 +28,18 @@ exports.createPost = async (req, res) => {
 // Get all posts from user
 exports.getPosts = async (req, res) => {
   try {
-    console.log(req.user);
-    const posts = await Post.find({ user: req.user.id }).sort({
-      creationDate: -1,
-    });
+    // Check for filter
+    const filter = req.params.filter;
+
+    const posts = await Post.find(
+      filter && filter !== "all"
+        ? { user: req.user.id, filter: filter }
+        : { user: req.user.id }
+    )
+      .populate("user")
+      .sort({
+        creationDate: "descending",
+      });
 
     res.json({ posts });
   } catch (error) {
@@ -49,11 +57,12 @@ exports.updatePost = async (req, res) => {
   }
 
   // Extract info from post
-  const { content } = req.body;
+  const { content, filter } = req.body;
   const newPost = {};
 
   if (content) {
     newPost.content = content;
+    newPost.filter = filter;
   }
 
   try {
