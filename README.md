@@ -6,10 +6,8 @@ Backend for facebook wall App
 
 ### Download and install node in your machine
 
-```
 https://nodejs.org/en/download/
 
-```
 
 ### Install npm (Node Package Manager)
 
@@ -28,9 +26,10 @@ npm install
 
 ```
 You can use this free service to create your database:
-https://www.mongodb.com/cloud/atlas
 
 ```
+https://www.mongodb.com/cloud/atlas
+
 
 ### Create variables.env file in project´s root with the following lines
 
